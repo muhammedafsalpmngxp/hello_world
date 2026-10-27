@@ -7,3 +7,20 @@ steps:
     image: alpine
     commands:
       - echo "Hello, World!"
+
+---
+kind: pipeline
+type: exec
+name: host-test
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+  - name: hello
+    commands:
+      - hostname
+      - whoami
+      - pwd
+      - ls | head
